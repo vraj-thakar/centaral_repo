@@ -1,0 +1,1 @@
+streamlit run "C:\Users\vraj Thakar\Desktop\heart diseases_ml\heart deseases prediction web app.py"
