@@ -49,6 +49,14 @@ def main():
     
     #giving a title 
     st.title("Heart Diseases Prediction")
+    
+    html_temp="""
+    <div style="background-color:tomato;padding :10px">
+    <h2 style ="color:white;text-align:center;"> Heart diseases predictor ML App </h2>
+    </div>
+    
+    """
+    st.markdown(html_temp, unsafe_allow_html=True)
     #age	sex	cp	trestbps	chol	fbs	restecg	thalach	exang	oldpeak	slope	ca	thal	
     #getting the input data from the user(create 13 variables)
     
