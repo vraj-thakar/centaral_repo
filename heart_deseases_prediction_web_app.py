@@ -15,13 +15,14 @@ machine learning engineers to create beautiful, performant apps in only a few ho
 import numpy as np
 import pickle
 import streamlit as st
+#uploaded_file = st.file_uploader("C:/Users/vraj Thakar/Desktop/heart diseases_ml/heart_diseases_prediction_trained_model.sav")
 
 
 #another person
 # write loaded model instead of original name model
 
 #loading the saved model -- rb(reading in binary formate)
-loaded_model = pickle.load(open("C:/Users/vraj Thakar/Desktop/optimization agricultural production/crope_prediction.sav","rb"","rb"))
+loaded_model = pickle.load(open("C:/Users/vraj Thakar/Desktop/heart diseases_ml/heart_diseases_prediction_trained_model.sav","rb"))
 
 #creating the function for prediction
 
@@ -40,7 +41,7 @@ def heart_diseases_pridiction(input_data):
     if(prediction[0]==1):
         return """The person has heart diseases \ntake care and consult with a heart specialist """
     else:
-       return """The person does not have heart diseases \n !!have a good day!!"""
+       return """The person does not have heart diseases \n !!have a good life!!"""
     
 #make user interface
 
