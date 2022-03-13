@@ -11,9 +11,25 @@ machine learning engineers to create beautiful, performant apps in only a few ho
 
 
 """
-
 import numpy as np
-import pickle
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+
+heart_data = pd.read_csv("heart disease prediction.csv")
+#spliting the feature and target
+y=heart_data["target"]
+x= heart_data.drop(columns='target',axis=1)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, stratify=y, random_state=2)
+model = LogisticRegression()
+
+#training ml model with training data
+model.fit(x_train, y_train)
+
+
+
+
 import streamlit as st
 #uploaded_file = st.file_uploader("C:/Users/vraj Thakar/Desktop/heart diseases_ml/heart_diseases_prediction_trained_model.sav")
 
@@ -22,7 +38,7 @@ import streamlit as st
 # write loaded model instead of original name model
 
 #loading the saved model -- rb(reading in binary formate)
-loaded_model = pickle.load(open("./heart_diseases_prediction_trained_model.sav","rb"))
+#loaded_model = pickle.load(open("C:/Users/vraj Thakar/Desktop/heart diseases_ml/heart_diseases_prediction_trained_model.sav","rb"))
 
 #creating the function for prediction
 
@@ -36,7 +52,7 @@ def heart_diseases_pridiction(input_data):
     np_array_ip_reshaped = np_array_ip.reshape(1,-1)
     # print(np_array_ip_reshaped )
 
-    prediction = loaded_model.predict(np_array_ip_reshaped)
+    prediction = model.predict(np_array_ip_reshaped)
 
     if(prediction[0]==1):
         return """The person has heart diseases \ntake care and consult with a heart specialist """
