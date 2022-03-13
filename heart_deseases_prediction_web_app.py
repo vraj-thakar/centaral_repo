@@ -22,7 +22,7 @@ import streamlit as st
 # write loaded model instead of original name model
 
 #loading the saved model -- rb(reading in binary formate)
-loaded_model = pickle.load(open("C:/Users/vraj Thakar/Desktop/heart diseases_ml/heart_diseases_prediction_trained_model.sav","rb"))
+loaded_model = pickle.load(open("./heart_diseases_prediction_trained_model.sav","rb"))
 
 #creating the function for prediction
 
